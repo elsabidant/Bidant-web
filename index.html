@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+
+    <link rel="stylesheet" href="/Bidant-web/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="/Bidant-web/Homepage.css" />
+    <script src="/Bidant-web/Homepage.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="wrap">
+        <strong> Presentation </strong>
+      </div>
+    </div>
+
+    <!-- Head -->
+    <div class="head">
+      <h1 class="title"><span class="title-text">Backstage with Elsa</span></h1>
+      <p class="muted">Tracklist of my projects</p>
+      <link rel="preload" as="image" href="drawings/Dayflow - Abstract 5.png" />
+    </div>
+
+    <!-- Menu -->
+    <div class="menu-root">
+      <button
+        class="menu-trigger"
+        aria-haspopup="menu"
+        aria-controls="website-menu"
+        aria-expanded="false"
+        title="Open menu"
+      >
+        <i class="icofont-retro-music-disk"></i>
+      </button>
+
+      <nav id="website-menu" class="menu" role="menu">
+        <a role="menuitem" tabindex="-1" href="index.html">Home</a>
+
+        <div class="menu-item has-submenu" role="none">
+          <button
+            class="submenu-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="submenu-anticipation"
+          >
+            Anticipation study ▾
+          </button>
+          <div id="submenu-anticipation" class="submenu" role="menu">
+            <a role="menuitem" tabindex="-1" href="project.html">Results</a>
+            <a role="menuitem" tabindex="-1" href="devlog.html">Dev log</a>
+          </div>
+        </div>
+
+        <a role="menuitem" tabindex="-1" href="watches.html"
+          >Watch auction market</a
+        >
+        <a role="menuitem" tabindex="-1" href="internship.html"
+          >Internship infos</a
+        >
+      </nav>
+    </div>
+
+    <!-- Presentation -->
+    <div class="presentation">
+      <!-- Informations (left) -->
+      <div class="id-card">
+        <h2 class="about-section-title">About me</h2>
+        <ul class="id-list">
+          <li>
+            <i class="icofont-graduate"></i>
+            <span class="v"
+              >I'm a student in Data Sciences, Arts and Culture at
+              Louis-le-Grand & PSL university. I have worked on various projects
+              using my data analysis skills, you will find a few on this
+              website.</span
+            >
+          </li>
+          <li>
+            <i class="icofont-file-alt"></i>
+            <span class="v"
+              >Please find my resume
+              <a href="CV Bidant Elsa.pdf" target="_blank" rel="noopener">
+                here
+              </a>
+            </span>
+          </li>
+          <li>
+            <i class="icofont-email"></i>
+            <span class="v"
+              >Contact me at
+              <a href="mailto:elsabid@gmail.com">elsabid@gmail.com</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Photo (right) -->
+      <figure class="portrait">
+        <img
+          src="drawings/Dayflow - Sitting.png"
+          alt="Portrait of Elsa Bidant"
+        />
+      </figure>
+    </div>
+
+    <!-- Access to other page/ album-->
+    <h2 class="album-section-title">Selected projects</h2>
+    <div class="album-grid">
+      <a class="album" href="Project.html" aria-label="Open Project">
+        <span
+          class="vinyl-colored"
+          style="--accent: #8e24aa"
+          aria-hidden="true"
+        ></span>
+        <svg class="album-label" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <!-- making a cricle -->
+            <path id="arcTop" d="M16,50 a34,34 0 0 0 68,0" />
+            <path id="arcBottom" d="M16,50 a34,34 0 0 1 68,0" />
+          </defs>
+          <text text-anchor="middle">
+            <textPath href="#arcTop" startOffset="50%">
+              <tspan dy="-2">study</tspan>
+            </textPath>
+          </text>
+          <text text-anchor="middle">
+            <textPath href="#arcBottom" startOffset="50%">
+              <tspan dy="3">Anticipation</tspan>
+            </textPath>
+          </text>
+        </svg>
+        <span class="sr-only">Anticipation study</span>
+      </a>
+
+      <a class="album" href="internship.html" aria-label="Open Internship">
+        <span
+          class="vinyl-colored"
+          style="--accent: #ffd000dc"
+          aria-hidden="true"
+        ></span>
+        <svg class="album-label" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <!-- making a cricle -->
+            <path id="arcTop" d="M16,50 a34,34 0 0 0 68,0" />
+            <path id="arcBottom" d="M16,50 a34,34 0 0 1 68,0" />
+          </defs>
+          <text text-anchor="middle">
+            <textPath href="#arcTop" startOffset="50%">
+              <tspan dy="-2">infos</tspan>
+            </textPath>
+          </text>
+          <text text-anchor="middle">
+            <textPath href="#arcBottom" startOffset="50%">
+              <tspan dy="3">Internship</tspan>
+            </textPath>
+          </text>
+        </svg>
+        <span class="sr-only">Internship infos</span>
+      </a>
+
+      <a class="album" href="watches.html" aria-label="Open Project C">
+        <span
+          class="vinyl-colored"
+          style="--accent: #ff3366"
+          aria-hidden="true"
+        ></span>
+        <svg class="album-label" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <!-- making a cricle -->
+            <path id="arcTop" d="M16,50 a34,34 0 0 0 68,0" />
+            <path id="arcBottom" d="M16,50 a34,34 0 0 1 68,0" />
+          </defs>
+          <text text-anchor="middle">
+            <textPath href="#arcTop" startOffset="50%">
+              <tspan dy="-2">dataset</tspan>
+            </textPath>
+          </text>
+          <text text-anchor="middle">
+            <textPath href="#arcBottom" startOffset="50%">
+              <tspan dy="3">Watches</tspan>
+            </textPath>
+          </text>
+        </svg>
+        <span class="sr-only">Watches dataset</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Elsa Bidant copyright — All rights reserved</div>
+  </body>
+</html>
