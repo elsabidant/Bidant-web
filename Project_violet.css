@@ -1,0 +1,324 @@
+:root {
+  /* Global palette */
+  --bg: #0d0d10;
+  --ink: #f6f6f9;
+  --muted: #aab;
+  --line: #1a1a25;
+  --panel: #121218;
+  --shadow: 0 18px 34px rgba(0, 0, 0, 0.35);
+
+  /* Vinyl site accents */
+  --orange: #ff6b00;
+  --yellow: #ffd000dc;
+  --green: #00c853;
+  --blue: #2979ff;
+  --violet: #8e24aa;
+  --pink: #ff3366;
+
+  --accent: var(--violet);
+
+  /* Head font*/
+  --head-title-font: "Oi", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial;
+  line-height: 1.6;
+}
+
+/* Top bar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.topbar .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: var(--muted);
+}
+
+/* Head */
+.head {
+  text-align: center;
+  padding: 30px;
+}
+
+.head .title,
+.head h1,
+.head h2 {
+  font-family: var(--head-title-font);
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.head .muted {
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+/* Menu */
+.menu-root {
+  position: fixed;
+  right: 20px;
+  top: 16px;
+  z-index: 1000;
+}
+
+.menu-trigger {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 56px;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.menu-root:hover .menu {
+  display: flex;
+}
+
+.menu.is-open {
+  display: flex !important;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.icofont-retro-music-disk {
+  font-size: 32px;
+}
+
+/* Submenu */
+.menu .has-submenu {
+  width: 100%;
+}
+
+.menu .submenu-trigger {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.menu .submenu-trigger:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menu .submenu {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin: 6px 0 0 10px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+
+.menu .has-submenu.open > .submenu {
+  display: flex;
+}
+
+/* Layout wrappers */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  align-items: center;
+}
+.section1,
+.section2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cards */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 18px 22px;
+  box-shadow: var(--shadow);
+  margin: 16px 0;
+  max-width: 800px;
+  width: 100%;
+}
+.card h2 {
+  text-align: center;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0.2rem 0 0.6rem;
+}
+.card h3 {
+  margin: 0.9rem 0 0.3rem;
+  color: var(--ink);
+}
+.card p {
+  margin: 0.5rem 0;
+}
+
+/* Accent bar inside cards */
+.separator {
+  height: 4px;
+  width: 90px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0.1));
+}
+
+/* Lists */
+.card ul {
+  padding-left: 1.15rem;
+  margin: 0.6rem 0;
+}
+.card li {
+  margin: 0.35rem 0;
+}
+
+/* Chart card */
+.chart-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+/* Barplot */
+#barplot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 928 / 600;
+  overflow: visible;
+}
+
+#barplot .bar {
+  fill: var(--violet) !important;
+  stroke: none;
+  shape-rendering: crispEdges;
+  transition: opacity 0.15s ease;
+}
+
+#barplot .tick text {
+  fill: #ddd;
+  font-size: 12px;
+}
+
+#barplot .domain,
+#barplot .tick line {
+  stroke: #777;
+}
+
+/* SVG global settings */
+svg,
+svg * {
+  box-sizing: content-box;
+}
+
+/* DevLog specific style */
+.section1 .card ul li {
+  background: rgba(142, 36, 170, 0.06);
+  border-left: 3px solid var(--accent);
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* Side decor */
+.side-decor {
+  position: relative;
+  z-index: 0;
+}
+.side-decor .side {
+  position: absolute;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.side-decor .left {
+  width: 110px;
+  left: 70px;
+  top: 80px;
+}
+
+.side-decor .left1 {
+  width: 120px;
+  left: 70px;
+  top: 70px;
+}
+.side-decor .right {
+  width: 140px;
+  right: 30px;
+  top: 800px;
+}
+
+.side-decor .left2 {
+  width: 110px;
+  left: 70px;
+  top: 1400px;
+}
+
+/* Footer */
+.footer {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
