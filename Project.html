@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Bidant-web/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="/Bidant-web/Project_violet.css" />
+    <script src="/Bidant-web/Homepage.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+    <title>Project</title>
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="wrap">
+        <strong>Anticipation study</strong>
+      </div>
+    </div>
+
+    <!-- Head -->
+    <div class="head">
+      <h1 class="title">Anticipation in fiction</h1>
+      <p class="muted">
+        Exploring whether anticipation stories (especially films) truly
+        anticipate future events, and how these visions align with what had
+        really happen since their publication.
+      </p>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu-root">
+      <button
+        class="menu-trigger"
+        aria-haspopup="menu"
+        aria-controls="website-menu"
+        aria-expanded="false"
+        title="Open menu"
+      >
+        <i class="icofont-retro-music-disk"></i>
+      </button>
+
+      <nav id="website-menu" class="menu" role="menu">
+        <a role="menuitem" tabindex="-1" href="Homepage.html">Home</a>
+
+        <div class="menu-item has-submenu" role="none">
+          <button
+            class="submenu-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="submenu-anticipation"
+          >
+            Anticipation study ▾
+          </button>
+          <div id="submenu-anticipation" class="submenu" role="menu">
+            <a role="menuitem" tabindex="-1" href="project.html">Results</a>
+            <a role="menuitem" tabindex="-1" href="devlog.html">Dev log</a>
+          </div>
+        </div>
+
+        <a role="menuitem" tabindex="-1" href="watches.html"
+          >Watch auction market</a
+        >
+        <a role="menuitem" tabindex="-1" href="internship.html"
+          >Internship infos</a
+        >
+      </nav>
+    </div>
+
+    <!-- Side decor -->
+    <div class="side-decor">
+      <img
+        class="side left1"
+        src="drawings/Happy Bunch - Astronaut.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="side right"
+        src="drawings/Cityscapes - Downtown.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <img
+        class="side left2"
+        src="drawings/Hyperspace - Robot 2.png"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+
+    <!-- Objective & Motivation -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Objective</h2>
+        <div class="separator"></div>
+        <p>
+          Test whether anticipatory cultural imaginaries (novels, films, comics)
+          actually predict future elements, and analyse how visions of the
+          future evolve across 1800–2100.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Motivation</h2>
+        <div class="separator"></div>
+        <p>
+          Near- and far-future fiction sometimes reflects and even anticipates
+          social, technological, and environmental transformations. This project
+          examines how these narratives align with scientific scenarios, current
+          debates, and events that have already occurred.
+        </p>
+      </div>
+    </div>
+
+    <!-- Expected Results -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Expected Results (Notebook)</h2>
+        <div class="separator"></div>
+        <h3>Temporal views of predictions</h3>
+        <p>
+          Visualise predictions across periods and compare their emphasis over
+          time.
+        </p>
+        <h3>Distance to reality</h3>
+        <p>
+          Measure proximity between anticipatory imaginaries and the real world.
+        </p>
+        <h3>Case studies</h3>
+        <p>Explore focused cases (e.g., climate, technological change).</p>
+        <p class="muted">
+          Target audience: researchers and students in digital humanities
+          interested in linking future imaginaries with scientific and media
+          data.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tasks / MVP / Resources -->
+    <div class="wrap section2">
+      <div class="card">
+        <h2>Key Tasks</h2>
+        <div class="separator"></div>
+        <ul>
+          <li>
+            Collect a corpus of anticipatory works (via Wikipedia & IMDb) with
+            metadata.
+          </li>
+          <li>Write a pre-registration.</li>
+          <li>Use an LLM to detect anticipation types present in works.</li>
+          <li>
+            Use an LLM to estimate how much a work is anchored in its time vs.
+            today.
+          </li>
+          <li>Group works by narrative themes.</li>
+          <li>
+            Test the prediction: anticipatory works do not anticipate the future
+            more than other works.
+          </li>
+          <li>Map works to the real world (by presented events).</li>
+          <li>Prototype visualisation.</li>
+          <li>Draft an article.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>MVP</h2>
+        <div class="separator"></div>
+        <ul>
+          <li>
+            A clean dataset of fictional works (literature and cinema) with
+            metadata, their themes, and an “anticipation” score inferred via an
+            LLM.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Resources</h2>
+        <div class="separator"></div>
+        <ul>
+          <li>Data: IMDb, Wikipedia</li>
+          <li>
+            Tools: Python (pandas, numpy, scikit-learn, transformers), GPT
+          </li>
+          <li>
+            Related work: “Quantifying and explaining the rise of fiction”
+            (method inspiration for LLM use on fiction).
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Graph 1 -->
+    <div class="chart-wrap">
+      <h2 class="h3">Most commun genres</h2>
+      <script type="module" src="Graph 1.js"></script>
+      <svg id="barplot"></svg>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Elsa Bidant copyright — All rights reserved</div>
+  </body>
+</html>
