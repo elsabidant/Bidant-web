@@ -192,9 +192,9 @@ body {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 18px 18px 22px;
+  padding: 18px 18px 30px;
   box-shadow: var(--shadow);
-  margin: 16px 0;
+  margin: 26px 0;
   max-width: 800px;
   width: 100%;
 }
@@ -213,22 +213,96 @@ body {
   margin: 0.5rem 0;
 }
 
+.card p.equation {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
 /* Accent bar inside cards */
 .separator {
   height: 4px;
   width: 90px;
-  margin: 0 auto 12px;
+  margin: 14px auto 22px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0.1));
 }
 
 /* Lists */
 .card ul {
+  list-style: none;
   padding-left: 1.15rem;
   margin: 0.6rem 0;
 }
 .card li {
   margin: 0.35rem 0;
+}
+
+/* Annotation */
+.annotation-intro {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.annotation-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.annotation-box.wide {
+  grid-column: 1 / -1;
+}
+
+.annotation-box {
+  background: rgba(142, 36, 170, 0.12);
+  border: 1px solid rgba(142, 36, 170, 0.45);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.annotation-box p {
+  margin: 0;
+}
+
+.annotation-box.binary {
+  margin-top: 1rem;
+}
+
+.annotation-arrow {
+  text-align: center;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--accent);
+  margin: 0.15rem 0;
+}
+
+.annotation-grid .annotation-arrow {
+  grid-column: 1 / -1;
+}
+
+.annotation-box.wide {
+  grid-column: 1 / -1;
+}
+
+.annotation-arrow.arrow-left {
+  grid-column: 1;
+}
+
+.annotation-arrow.arrow-right {
+  grid-column: 2;
+}
+
+.annotation-arrow.arrow-full {
+  grid-column: 1 / -1;
 }
 
 /* Chart card */
@@ -238,30 +312,162 @@ body {
   padding: 8px 0;
 }
 
-/* Barplot */
-#barplot {
+/* Charts: year & worldwide gross */
+#year-plot,
+#gross-plot {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 928 / 600;
+  aspect-ratio: 460 / 320;
   overflow: visible;
 }
 
-#barplot .bar {
-  fill: var(--violet) !important;
+.chart-wrap .dual-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.chart-wrap svg .bar {
+  fill: var(--violet);
   stroke: none;
   shape-rendering: crispEdges;
   transition: opacity 0.15s ease;
 }
 
-#barplot .tick text {
+.chart-wrap svg .bar:hover {
+  opacity: 0.8;
+}
+
+.chart-wrap svg .tick text {
   fill: #ddd;
   font-size: 12px;
 }
 
-#barplot .domain,
-#barplot .tick line {
+.chart-wrap svg .domain,
+.chart-wrap svg .tick line {
   stroke: #777;
+}
+
+/* Chart: annotated data*/
+.film-scatter-wrap {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+#film-scatter {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Scatter dots */
+#film-scatter .dot {
+  fill: var(--violet);
+  opacity: 0.75;
+}
+
+#film-scatter .dot:hover {
+  opacity: 1;
+}
+
+#film-scatter .axis text {
+  fill: #ddd;
+  font-size: 12px;
+}
+
+#film-scatter .axis path,
+#film-scatter .axis line {
+  stroke: #777;
+}
+
+.film-details-card {
+  display: none;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--panel, #181826);
+  box-shadow: var(--shadow, 0 8px 20px rgba(0, 0, 0, 0.4));
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.film-details-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.film-meta {
+  margin: 0 0 10px;
+  opacity: 0.9;
+}
+
+.film-anticip {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--violet, #c084fc);
+  font-size: 11px;
+}
+
+.film-claims-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .film-claims-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Scatter claims */
+.film-claim {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.film-claim-header {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.film-claim-text {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
+.film-claim-outcomes {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.film-claim-outcomes > div {
+  white-space: nowrap;
+}
+
+.film-claims-more {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+#film-scatter .dot.selected {
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  opacity: 1;
 }
 
 /* SVG global settings */
@@ -309,7 +515,7 @@ svg * {
 .side-decor .left2 {
   width: 110px;
   left: 70px;
-  top: 1400px;
+  top: 1900px;
 }
 
 /* Footer */
