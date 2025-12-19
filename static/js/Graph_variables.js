@@ -1,6 +1,6 @@
 "use strict";
 
-const raw = await d3.csv("/static/data/full_annotated_film_score.csv");
+const raw = await d3.csv("../static/data/full_annotated_film_score.csv");
 
 function parseNum(v) {
   if (v == null || v === "") return NaN;
