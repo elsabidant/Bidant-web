@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
 
-    <link rel="stylesheet" href="../static/icofont/icofont.min.css" />
-    <link rel="stylesheet" href="../static/css/Homepage.css" />
-    <script src="../static/js/Homepage.js" defer></script>
+    <link rel="stylesheet" href="static/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="static/css/Homepage.css" />
+    <script src="static/js/Homepage.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -58,15 +58,20 @@
             Research project ▾
           </button>
           <div id="submenu-anticipation" class="submenu" role="menu">
-            <a role="menuitem" tabindex="-1" href="project.html">Results</a>
-            <a role="menuitem" tabindex="-1" href="devlog.html">Dev log</a>
+            <a role="menuitem" tabindex="-1" href="pages/project.html"
+              >Results</a
+            >
+            <a role="menuitem" tabindex="-1" href="pages/devlog.html"
+              >Dev log</a
+            >
           </div>
         </div>
 
-        <a role="menuitem" tabindex="-1" href="watches.html"
+        <a role="menuitem" tabindex="-1" href="pages/watches.html"
           >Watch auction market</a
         >
-        <a role="menuitem" tabindex="-1" href="internship.html"
+        >
+        <a role="menuitem" tabindex="-1" href="pages/internship.html"
           >Internship infos</a
         >
       </nav>
@@ -91,7 +96,7 @@
 
         <a
           class="btn btn-ghost"
-          href="../static/documents/CV Elsa - english.pdf"
+          href="static/documents/CV Elsa - english.pdf"
           target="_blank"
           rel="noopener"
         >
@@ -103,7 +108,7 @@
       <!-- Photo -->
       <figure class="portrait">
         <img
-          src="../static/drawings/Dayflow - Sitting.png"
+          src="static/drawings/Dayflow - Sitting.png"
           alt="Portrait of Elsa Bidant"
         />
       </figure>
@@ -112,7 +117,7 @@
     <!-- Access to other page/ album-->
     <h2 class="album-section-title">Selected projects</h2>
     <div class="album-grid">
-      <a class="album" href="project.html" aria-label="Open Project">
+      <a class="album" href="pages/project.html" aria-label="Open Project">
         <span
           class="vinyl-colored"
           style="--accent: #8e24aa"
@@ -138,7 +143,11 @@
         <span class="sr-only">Research project</span>
       </a>
 
-      <a class="album" href="internship.html" aria-label="Open Internship">
+      <a
+        class="album"
+        href="pages/internship.html"
+        aria-label="Open Internship"
+      >
         <span
           class="vinyl-colored"
           style="--accent: #ffd000dc"
@@ -164,7 +173,7 @@
         <span class="sr-only">Internship infos</span>
       </a>
 
-      <a class="album" href="watches.html" aria-label="Open Project C">
+      <a class="album" href="pages/watches.html" aria-label="Open Project C">
         <span
           class="vinyl-colored"
           style="--accent: #ff3366"
