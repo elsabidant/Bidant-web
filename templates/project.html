@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="../static/css/Project_violet.css" />
+    <script src="../static/js/Homepage.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+    <title>Project</title>
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <div class="topbar">
+      <a href="index.html" class="home-icon" aria-label="Homepage return">
+        <i class="icofont-toy-duck"></i>
+      </a>
+      <div class="wrap">
+        <strong>Research project</strong>
+      </div>
+    </div>
+
+    <!-- Head -->
+    <div class="head">
+      <h1 class="title">Popcorn and prophecy</h1>
+      <p class="muted">
+        Investigation on whether science-fiction movies truly anticipate future
+        developments or mainly provide compelling entertainment dressed up as
+        prophecy.
+      </p>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu-root">
+      <button
+        class="menu-trigger"
+        aria-haspopup="menu"
+        aria-controls="website-menu"
+        aria-expanded="false"
+        title="Open menu"
+      >
+        <i class="icofont-retro-music-disk"></i>
+      </button>
+
+      <nav id="website-menu" class="menu" role="menu">
+        <a role="menuitem" tabindex="-1" href="index.html">Home</a>
+
+        <div class="menu-item has-submenu" role="none">
+          <button
+            class="submenu-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="submenu-anticipation"
+          >
+            Research project ▾
+          </button>
+          <div id="submenu-anticipation" class="submenu" role="menu">
+            <a role="menuitem" tabindex="-1" href="project.html">Results</a>
+            <a role="menuitem" tabindex="-1" href="devlog.html">Dev log</a>
+          </div>
+        </div>
+
+        <a role="menuitem" tabindex="-1" href="watches.html"
+          >Watch auction market</a
+        >
+        <a role="menuitem" tabindex="-1" href="internship.html"
+          >Internship infos</a
+        >
+      </nav>
+    </div>
+
+    <!-- Side decor -->
+    <div class="side-decor">
+      <img
+        class="side left1"
+        src="../static/drawings/Happy Bunch - Astronaut.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="side right"
+        src="../static/drawings/Cityscapes - Downtown.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <img
+        class="side left2"
+        src="../static/drawings/Hyperspace - Robot 2.png"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+
+    <!-- Description & Hypotheses -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Description</h2>
+        <div class="separator"></div>
+        <p>
+          Fiction has been argued to either function as a simulation tool,
+          helping us rehearse possible futures, or as pure entertainment that
+          amplifies cues humans already enjoy (threat, dominance, romance,
+          technological power). Science fiction is a privileged ground for this
+          question because it explicitly projects future technologies, social
+          transformations, and environmental crises.
+        </p>
+        <p>
+          This study focuses on science-fiction cinema and asks whether films
+          that are more accurate in anticipating future states of the world are
+          more or less successful at the box office.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Hypotheses &amp; prediction</h2>
+        <div class="separator"></div>
+        <p>
+          <strong>Prediction :</strong>
+          Works that predict the future accurately have less cultural success.
+        </p>
+        <ul>
+          <li>
+            <strong>H0</strong> The accuracy in predicting the future does not
+            influence the popularity of a film.
+          </li>
+          <li>
+            <strong>H1</strong> The accuracy in predicting the future negatively
+            influences the popularity of a film.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Material & Sample -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Material</h2>
+        <div class="separator"></div>
+        <p>
+          The study relies on the IMDb dataset of science-fiction movies
+          released between 1931 and 2019. The initial sample includes
+          <strong>1,455 science-fiction films</strong> with basic metadata
+          (title, plot, year of release, genre, language, worldwide gross
+          income, etc.).
+        </p>
+        <p>
+          For the analysis, we restrict the sample to films with a non-missing
+          worldwide box office, resulting in N = 588 movies. In addition, we
+          merge this dataset with the IMDb Movies Dataset from Kaggle to obtain
+          budget information, yielding a final analytical sample of
+          <strong>N = 360</strong> films.
+        </p>
+      </div>
+    </div>
+
+    <!-- Variables plots -->
+    <div class="chart-wrap variables">
+      <h2 class="figure-title">Figure 1 — Distributions of key variables</h2>
+      <div class="plots-grid">
+        <section class="plot-card">
+          <svg id="score-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <svg id="year-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <div class="plot-controls" id="boxoffice-controls"></div>
+          <svg id="boxoffice-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <div class="plot-controls" id="budget-controls"></div>
+          <svg id="budget-plot"></svg>
+        </section>
+      </div>
+
+      <script type="module" src="../static/js/Graph_variables.js"></script>
+    </div>
+
+    <!-- Method, Statistics & Interpretation -->
+    <div class="wrap section2">
+      <div class="card">
+        <h2>Annotation method</h2>
+        <div class="separator"></div>
+
+        <p class="annotation-intro">
+          We rely on an automatic annotation procedure powered by GPT-4 to
+          compute an holistic measure of anticipatory accuracy. GPT is asked
+          directly how much a past film anticipates the present, yielding a
+          <strong>continuous score from 0 to 5</strong>.
+        </p>
+
+        <div class="annotation-grid">
+          <!-- Box : Prompt -->
+          <div class="annotation-box wide prompt-box">
+            <p><strong>Prompt</strong><br /></p>
+            <p>
+              Rate how much this past movie anticipates the present by giving a
+              score from 0 to 5, where <br />
+              0 = no resemblance to later real developments; <br />
+              1 = extremely vague or coincidental resemblance; <br />
+              2 = limited partial anticipation with few identifiable parallels;
+              <br />
+              3 = moderate anticipation with several partial or general
+              parallels; <br />
+              4 = strong anticipation with multiple meaningful and relatively
+              precise correspondences;<br />
+              5 = exceptional anticipation with numerous specific, accurate, and
+              well-defined parallels to later real-world developments.
+              <br />Base the rating only on elements shown in the movie that
+              later occurred in reality, justify briefly in one paragraph, and
+              ignore author intentions. <br />Then finish your message in the
+              following format: Score =
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Annotated data-->
+
+    <div class="chart-wrap">
+      <h2>Annotation and anticipation accuracy</h2>
+      <p>
+        Each dot represents a science-fiction film. The horizontal axis displays
+        its anticipation accuracy score, while the vertical axis reports its
+        worldwide box-office revenue expressed in constant 2020 dollars.
+        <br />
+        Click on a dot to reveal the information about the film used in the
+        analysis.
+      </p>
+
+      <div class="chart-wrap film-scatter-wrap">
+        <svg id="film-scatter"></svg>
+        <div id="film-details" class="film-details-card"></div>
+      </div>
+      <script type="module" src="/static/js/Graph_regression.js"></script>
+    </div>
+
+    <!-- Analysis method -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Analysis method</h2>
+        <div class="separator"></div>
+        <p>
+          To test our hypothesis, we compute a
+          <strong> multivariate linear regression </strong> that models the
+          cultural success (approximated by the worldwide gross income) based on
+          the year and the accuracy of future prediction.<br />
+          The regression uses the following formula :
+        </p>
+        <p class="equation">
+          log(Box office<sub>i</sub>) = b<sub>0</sub> +
+          b<sub>1</sub>·Accuracy<sub>i</sub> + b<sub>2</sub>·Budget<sub>i</sub>
+          + b<sub>3</sub>·Year<sub>i</sub> + ε<sub>i</sub>
+        </p>
+
+        <p>
+          We focus on a one-sided (left-tailed) test on b<sub>1</sub>, asking
+          whether higher anticipation accuracy is associated with lower
+          box-office revenue. The one-tailed p-value is the probability, under
+          the null hypothesis of no effect, of observing a coefficient as
+          negative as ours (or more), so a small value directly supports our
+          directional prediction.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Elsa Bidant copyright — All rights reserved</div>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devlog</title>
+
+    <link rel="stylesheet" href="../static/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="../static/css/Project_violet.css" />
+    <script src="../static/js/Homepage.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Top bar -->
+    <div class="topbar">
+      <a
+        href="../templates/index.html"
+        class="home-icon"
+        aria-label="Homepage return"
+      >
+        <i class="icofont-toy-duck"></i>
+      </a>
+      <div class="wrap">
+        <strong>Research project DevLog</strong>
+      </div>
+    </div>
+
+    <!-- Head -->
+    <div class="head">
+      <h1 class="title">Dev log</h1>
+      <p class="muted">
+        Follow the development of the anticipation accuracy in science-fiction
+        study.
+      </p>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu-root">
+      <button
+        class="menu-trigger"
+        aria-haspopup="menu"
+        aria-controls="website-menu"
+        aria-expanded="false"
+        title="Open menu"
+      >
+        <i class="icofont-retro-music-disk"></i>
+      </button>
+
+      <nav id="website-menu" class="menu" role="menu">
+        <a role="menuitem" tabindex="-1" href="index.html">Home</a>
+
+        <div class="menu-item has-submenu" role="none">
+          <button
+            class="submenu-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="submenu-anticipation"
+          >
+            Research project ▾
+          </button>
+          <div id="submenu-anticipation" class="submenu" role="menu">
+            <a role="menuitem" tabindex="-1" href="project.html">Results</a>
+            <a role="menuitem" tabindex="-1" href="devlog.html">Dev log</a>
+          </div>
+        </div>
+
+        <a role="menuitem" tabindex="-1" href="watches.html"
+          >Watch auction market</a
+        >
+        <a role="menuitem" tabindex="-1" href="internship.html"
+          >Internship infos</a
+        >
+      </nav>
+    </div>
+
+    <!-- Side decor -->
+    <div class="side-decor">
+      <img
+        class="side left"
+        src="../static/drawings/Hyperspace - Robot 2.png"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+
+    <!-- DevLog -->
+    <div class="wrap section1">
+      <div class="card">
+        <div class="bar"></div>
+
+        <h3>2025-12-16</h3>
+        <ul>
+          <li>
+            Publication of the second pre-registration with the new prompt.
+          </li>
+          <li>Run the artwork annotation prompt.</li>
+          <li>
+            We find significant results, but they are contrary to our
+            predictions.
+          </li>
+        </ul>
+
+        <h3>2025-12-09</h3>
+        <ul>
+          <li>
+            More data analysis with budget : the results are still not
+            significant.
+          </li>
+          <li>
+            Questioning the accuracy of our prediction score + current
+            prediction score lack of variability (many scores of 0).
+          </li>
+          <li>
+            New way to annotate: ask an LLM to rate the accuracy of the
+            prediction on a scale of 1 to 5.
+          </li>
+          <li>
+            Next task: make a second pre-registration to record our new prompt.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="devlog-expand">
+      <summary class="devlog-summary">
+        <span class="devlog-split">
+          <span class="devlog-split-line" aria-hidden="true"></span>
+
+          <span class="devlog-btn" role="button">
+            <i class="icofont-rounded-down"></i>
+            Methodological focus — First annotation & anticipation score
+          </span>
+
+          <span class="devlog-split-line" aria-hidden="true"></span>
+        </span>
+      </summary>
+
+      <!-- ===== Annotation method ===== -->
+      <div class="wrap section2">
+        <div class="card">
+          <h2>Annotation method</h2>
+          <div class="separator"></div>
+
+          <p class="annotation-intro">
+            We used a Large Language Model (GPT-4) to automatically annotate
+            each film with factual claims about the world it depicts.
+          </p>
+
+          <div class="annotation-grid">
+            <div class="annotation-box wide">
+              <p>
+                <strong>Claims extraction</strong><br />
+                Extract 5 concrete, testable claims about the film’s world.
+              </p>
+            </div>
+
+            <div class="annotation-arrow arrow-left">&darr;</div>
+            <div class="annotation-arrow arrow-right">&darr;</div>
+
+            <div class="annotation-box half">
+              <p>
+                <strong>Past truth</strong><br />
+                Check if each claim was true at release year of the film.
+              </p>
+            </div>
+
+            <div class="annotation-box half">
+              <p>
+                <strong>Present truth</strong><br />
+                Check if each claim is true today.
+              </p>
+            </div>
+
+            <div class="annotation-arrow arrow-full">&darr;</div>
+
+            <div class="annotation-box wide">
+              <p>
+                <strong>Scores</strong><br />
+                +1 if false → true<br />
+                0 if unchanged<br />
+                −1 if true → false
+              </p>
+            </div>
+          </div>
+
+          <div class="annotation-arrow plus">&plus;</div>
+
+          <div class="annotation-box binary">
+            <p>
+              <strong>Binary label</strong><br />
+              Anticipatory (1) or not (0)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Chart ===== -->
+      <div class="chart-wrap">
+        <h2>Annotation and anticipation accuracy</h2>
+        <p>
+          Each dot represents one science-fiction film, click on it to find the
+          informations about the movie.
+        </p>
+
+        <div class="chart-wrap film-scatter-wrap">
+          <svg id="film-scatter"></svg>
+          <div id="film-details" class="film-details-card"></div>
+        </div>
+        <script type="module" src="../static/js/Graph 2.js"></script>
+      </div>
+    </details>
+
+    <div class="wrap section1">
+      <div class="card">
+        <h3>2025-11-28</h3>
+        <ul>
+          <li>Creation of annotated data by LLM.</li>
+          <li>
+            Data cleaning through annotations and conversion of amounts into
+            constant dollars (2020).
+          </li>
+          <li>
+            Data analysis : linear regression. The results found by this first
+            analysis are not significant.
+          </li>
+          <li>
+            Problem: the film's budget is not used as an explanatory variable
+            for box office takings.
+          </li>
+        </ul>
+
+        <h3>2025-11-07</h3>
+        <ul>
+          <li>
+            Modification of the project: the idea of testing whether
+            anticipatory works ‘predict’ the future better than others would
+            necessarily have yielded significant results due to the amount of
+            data.
+          </li>
+          <li>
+            New idea: test whether, in science fiction films, those that predict
+            the future more accurately are less successful culturally.
+            (Possibility of testing the hypothesis with linear regression).
+          </li>
+          <li>Finalisation of writing and publication of pre-registration.</li>
+        </ul>
+
+        <h3>2025-10-21</h3>
+        <ul>
+          <li>
+            Changes in operationalization : ask the LLM to extract 5 factual
+            claims per film, then to evaluate independently from the work
+            whether it was true at the time of publication and whether it is
+            true today.
+          </li>
+          <li>Manually annotating and testing the prompts on 10 films.</li>
+          <li>Rewritting of the protocole in the preregistration.</li>
+        </ul>
+
+        <h3>2025-10-12</h3>
+        <ul>
+          <li>Writing the code to run the prompts.</li>
+          <li>
+            Manually annotating and testing the prompts on 10 films and 10
+            books.
+          </li>
+          <li>
+            Minor issue with the prompts: reassessing the operationalization.
+          </li>
+        </ul>
+
+        <h3>2025-10-05</h3>
+        <ul>
+          <li>Writing the Pre Registration.</li>
+          <li>Writing some LLM prompts to test our hypothesis.</li>
+          <li>Next step: prompt testing.</li>
+        </ul>
+
+        <h3>2025-09-28</h3>
+        <ul>
+          <li>
+            Wikidata harvesting attempts: mixed results due to timeouts and
+            missing data (publication dates, authors).
+          </li>
+          <li>
+            Meeting with Edgar Dubourg: discussed methodology and article
+            outline ideas.
+          </li>
+          <li>
+            Next step: write the study protocol and draft a pre-registration.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Elsa Bidant copyright — All rights reserved</div>
+  </body>
+</html>
