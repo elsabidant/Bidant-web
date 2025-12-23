@@ -1,6 +1,6 @@
 "use strict";
 
-const raw = await d3.csv("/static/data/annotated_film_score.csv");
+const raw = await d3.csv("../static/data/annotated_film_score.csv");
 
 function parseGross(value) {
   if (!value) return NaN;

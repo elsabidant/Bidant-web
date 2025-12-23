@@ -38,9 +38,9 @@ url("./fonts/icofont.woff") format("woff");
   content: "\ecac";
 }
 
-.icofont-toy-duck:before
+.icofont-favourite:before
 {
-  content: "\ebaa";
+  content: "\ef25";
 }
 
 [class^="icofont-"].icofont-duotone,

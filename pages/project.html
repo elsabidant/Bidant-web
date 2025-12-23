@@ -20,7 +20,7 @@
     <!-- Top bar -->
     <div class="topbar">
       <a href="../index.html" class="home-icon" aria-label="Homepage return">
-        <i class="icofont-toy-duck"></i>
+        <i class="icofont-favourite"></i>
       </a>
       <div class="wrap">
         <strong>Research project</strong>
@@ -105,17 +105,38 @@
         <h2>Description</h2>
         <div class="separator"></div>
         <p>
-          Fiction has been argued to either function as a simulation tool,
-          helping us rehearse possible futures, or as pure entertainment that
-          amplifies cues humans already enjoy (threat, dominance, romance,
-          technological power). Science fiction is a privileged ground for this
-          question because it explicitly projects future technologies, social
-          transformations, and environmental crises.
-        </p>
-        <p>
-          This study focuses on science-fiction cinema and asks whether films
-          that are more accurate in anticipating future states of the world are
-          more or less successful at the box office.
+          Fictional narratives have long been debated as serving either a
+          <strong>cognitive function</strong>, helping individuals simulate
+          possible futures and rehearse responses to uncertain situations, or a
+          purely <strong>entertainment-driven function</strong>, relying on
+          exaggerated cues that humans are already predisposed to enjoy, such as
+          threat, dominance, romance, or technological power. This opposition is
+          commonly framed as a contrast between the
+          <strong>simulation hypothesis</strong> and the
+          <strong>entertainment hypothesis</strong>.
+
+          <br /><br />
+
+          A key implication of this debate is the possibility of a
+          <strong>structural trade-off</strong>
+          between predictive accuracy and entertainment value. Narratives that
+          aim to anticipate the future accurately must remain constrained by
+          plausible mechanisms and known regularities, which may limit the
+          exaggeration, surprise, and emotional intensity that often drive
+          audience engagement. Conversely, stories that depart from realism can
+          amplify rewarding stimuli, functioning as superstimuli that enhance
+          enjoyment but reduce predictive fidelity.
+
+          <br /><br />
+
+          <strong>Science-fiction cinema</strong> provides a privileged testing
+          ground for this question, as it explicitly projects future
+          technologies, social transformations, and global threats. This study
+          investigates whether science-fiction films that more accurately
+          anticipate real future developments are
+          <strong>less commercially successful</strong>, as predicted by the
+          entertainment hypothesis, or whether anticipatory accuracy instead
+          contributes positively to cultural and economic success.
         </p>
       </div>
 
@@ -220,7 +241,8 @@
               <br />Base the rating only on elements shown in the movie that
               later occurred in reality, justify briefly in one paragraph, and
               ignore author intentions. <br />Then finish your message in the
-              following format: Score =
+              following format: Score = <br />
+              The film is :
             </p>
           </div>
         </div>
@@ -230,11 +252,15 @@
     <!-- Annotated data-->
 
     <div class="chart-wrap">
-      <h2>Annotation and anticipation accuracy</h2>
+      <h2 class="figure-title">
+        Figure 2 — Anticipatory accuracy and box-office revenue
+      </h2>
       <p>
         Each dot represents a science-fiction film. The horizontal axis displays
-        its anticipation accuracy score, while the vertical axis reports its
-        worldwide box-office revenue expressed in constant 2020 dollars.
+        its
+        <strong>anticipation accuracy score</strong>, while the vertical axis
+        reports its <strong>worldwide box-office revenue</strong> expressed in
+        constant 2020 dollars.
         <br />
         Click on a dot to reveal the information about the film used in the
         analysis.
@@ -260,18 +286,87 @@
           The regression uses the following formula :
         </p>
         <p class="equation">
-          log(Box office<sub>i</sub>) = b<sub>0</sub> +
-          b<sub>1</sub>·Accuracy<sub>i</sub> + b<sub>2</sub>·Budget<sub>i</sub>
-          + b<sub>3</sub>·Year<sub>i</sub> + ε<sub>i</sub>
+          log(Box office<sub>i</sub>) = β<sub>0</sub> +
+          β<sub>1</sub>·Accuracy<sub>i</sub> + β<sub>2</sub>·log(Budget)<sub
+            >i</sub
+          >
+          + β<sub>3</sub>·Year<sub>i</sub> + ε<sub>i</sub>
         </p>
 
         <p>
-          We focus on a one-sided (left-tailed) test on b<sub>1</sub>, asking
+          We focus on a one-sided (left-tailed) test on β<sub>1</sub>, asking
           whether higher anticipation accuracy is associated with lower
           box-office revenue. The one-tailed p-value is the probability, under
           the null hypothesis of no effect, of observing a coefficient as
           negative as ours (or more), so a small value directly supports our
           directional prediction.
+        </p>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Results</h2>
+        <div class="separator"></div>
+        <p>
+          The main coefficient of interest,
+          <strong>anticipatory accuracy</strong>, shows a
+          <strong>positive and statistically significant</strong> association
+          with box-office performance (β<sub>1</sub> = 0.149). The conventional
+          two-sided p-value for this effect is <strong>p = 0.008</strong>.
+          However, because the pre-registered hypothesis specified a
+          <strong>one-sided left-tailed test</strong> (H1: β<sub>1</sub> &lt;
+          0), the corresponding one-sided p-value is <strong>0.996</strong>.
+          This result provides <strong>no support</strong> for the
+          pre-registered directional hypothesis that more accurate films would
+          be less commercially successful.
+
+          <br /><br />
+
+          By contrast, the one-sided <strong>right-tailed p-value</strong> (H1:
+          β<sub>1</sub> &gt; 0) is <strong>0.004</strong>, indicating strong
+          evidence in favor of a <strong>positive relationship</strong> between
+          anticipatory accuracy and box-office revenue.
+
+          <br /><br />
+
+          Among the control variables,
+          <strong>production budget</strong> emerges as a strong and highly
+          significant predictor of box-office revenue (β<sub>2</sub> = 0.416, p
+          &lt; 0.001). In contrast, the effect of
+          <strong>release year</strong> is not statistically significant in this
+          model (β<sub>3</sub> = 0.076, p = 0.165), suggesting that temporal
+          trends are largely accounted for by differences in budget and film
+          characteristics.
+        </p>
+      </div>
+    </div>
+
+    <div class="chart-wrap results">
+      <h2 class="figure-title">Figure 3 — Regression results</h2>
+      <svg id="results"></svg>
+      <div id="analysis-results" class="analysis-results-card"></div>
+      <script type="module" src="../static/js/Graph_results.js"></script>
+    </div>
+
+    <!-- Discussion -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Discussion</h2>
+        <div class="separator"></div>
+        <p>
+          Overall, these findings
+          <strong
+            >contradict the pre-registered entertainment hypothesis</strong
+          >
+          and instead support the <strong>simulation hypothesis</strong>:
+          science-fiction films that more accurately anticipate future
+          developments tend to achieve
+          <strong>greater commercial success</strong>. Rather than indicating a
+          trade-off between realism and popularity, anticipatory accuracy
+          appears to function as a <strong>positive contributor</strong> to
+          cultural and economic outcomes in this sample.
         </p>
       </div>
     </div>

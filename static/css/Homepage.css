@@ -146,9 +146,9 @@ body {
   margin-right: 12px;
 }
 
-.home-icon .icofont-toy-duck {
+.home-icon .icofont-favourite {
   font-size: 38px;
-  color: var(--ink);
+  color: var(--muted);
   line-height: 1;
 }
 
@@ -275,7 +275,7 @@ body {
 
 .about-section-title {
   font-family: "Oi", system-ui, sans-serif;
-  font-size: clamp(20px, 3.6vw, 36px);
+  font-size: clamp(24px, 3.6vw, 38px);
   line-height: 1.05;
   text-align: center;
   margin-bottom: 40px;

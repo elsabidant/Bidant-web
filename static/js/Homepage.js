@@ -1,7 +1,7 @@
 // Hompage menu
 
 (function () {
-  const trigger = document.querySelector("[data-menu-trigger]");
+  const trigger = document.querySelector(".menu-trigger");
   const menu = document.getElementById("website-menu");
 
   if (!trigger || !menu) return;

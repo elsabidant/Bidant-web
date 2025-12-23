@@ -92,9 +92,9 @@ body {
   margin-right: 12px;
 }
 
-.home-icon .icofont-toy-duck {
+.home-icon .icofont-favourite {
   font-size: 38px;
-  color: var(--ink);
+  color: var(--muted);
   line-height: 1;
 }
 
@@ -278,10 +278,6 @@ body {
   gap: 0.75rem;
 }
 
-.annotation-box.wide {
-  grid-column: 1 / -1;
-}
-
 .annotation-box {
   background: rgba(142, 36, 170, 0.12);
   border: 1px solid rgba(142, 36, 170, 0.45);
@@ -418,13 +414,6 @@ body {
   fill-opacity: 1;
 }
 
-.figure-source {
-  margin-top: 8px;
-  text-align: right;
-  font-size: 10px;
-  color: var(--muted);
-}
-
 /* Chart: annotated data*/
 .film-scatter-wrap {
   position: relative;
@@ -545,6 +534,13 @@ body {
   opacity: 1;
 }
 
+/* Regression results */
+.chart-wrap.results svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* SVG global settings */
 svg,
 svg * {
@@ -629,18 +625,18 @@ svg * {
 .side-decor .left1 {
   width: 120px;
   left: 70px;
-  top: 70px;
+  top: 300px;
 }
 .side-decor .right {
   width: 140px;
   right: 30px;
-  top: 800px;
+  top: 2200px;
 }
 
 .side-decor .left2 {
   width: 110px;
   left: 70px;
-  top: 1900px;
+  top: 4000px;
 }
 
 /* Footer */

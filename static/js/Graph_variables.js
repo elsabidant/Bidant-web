@@ -10,7 +10,7 @@ function parseNum(v) {
 
 const COL = {
   year: "year",
-  score: "score",
+  score: "movie_based_score",
   box: "worldwide_gross_income_2020",
   budget: "budget_2020",
 };

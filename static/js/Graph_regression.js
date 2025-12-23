@@ -72,12 +72,14 @@ function renderFilmDetails(film) {
 // ---- Data loading & scatterplot ----
 
 (async function () {
-  const raw = await d3.csv("../static/data/full_annotated_film_score_2.csv");
+  const raw = await d3.csv("../static/data/full_annotated_film_score.csv");
 
   const films = raw
     .map((d) => {
       const year = d.year ? +d.year : NaN;
-      const score = d.score != null ? +d.score : NaN;
+
+      // MODIF : score = movie_based_score (au lieu de d.score)
+      const score = d.movie_based_score != null ? +d.movie_based_score : NaN;
 
       const boxoffice =
         d.worldwide_gross_income_2020 != null

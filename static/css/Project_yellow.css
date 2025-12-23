@@ -92,9 +92,9 @@ body {
   margin-right: 12px;
 }
 
-.home-icon .icofont-toy-duck {
+.home-icon .icofont-favourite {
   font-size: 38px;
-  color: var(--ink);
+  color: var(--muted);
   line-height: 1;
 }
 
