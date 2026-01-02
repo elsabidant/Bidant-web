@@ -202,5 +202,5 @@ svg
   .attr("y", height - 10)
   .attr("text-anchor", "middle")
   .attr("font-size", 16)
-  .attr("fill", COLORS.text)
+  .attr("fill", "#aab")
   .text("Coefficient (β) and 95% confidence interval");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../static/icofont/icofont.min.css" />
-    <link rel="stylesheet" href="../static/css/Project_violet.css" />
+    <link rel="stylesheet" href="../static/css/research_project.css" />
     <script src="../static/js/Homepage.js" defer></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -70,9 +70,7 @@
         <a role="menuitem" tabindex="-1" href="watches.html"
           >Watch auction market</a
         >
-        <a role="menuitem" tabindex="-1" href="internship.html"
-          >Internship infos</a
-        >
+        <a role="menuitem" tabindex="-1" href="internship.html">Internship</a>
       </nav>
     </div>
 
@@ -132,8 +130,9 @@
           <strong>Science-fiction cinema</strong> provides a privileged testing
           ground for this question, as it explicitly projects future
           technologies, social transformations, and global threats. This study
-          investigates whether science-fiction films that more accurately
-          anticipate real future developments are
+          investigates whether science-fiction films that
+          <strong>more accurately anticipate</strong>
+          real future developments are
           <strong>less commercially successful</strong>, as predicted by the
           entertainment hypothesis, or whether anticipatory accuracy instead
           contributes positively to cultural and economic success.
@@ -215,7 +214,7 @@
         <div class="separator"></div>
 
         <p class="annotation-intro">
-          We rely on an automatic annotation procedure powered by GPT-4 to
+          We rely on an automatic annotation procedure powered by GPT-5.2 to
           compute an holistic measure of anticipatory accuracy. GPT is asked
           directly how much a past film anticipates the present, yielding a
           <strong>continuous score from 0 to 5</strong>.
@@ -262,8 +261,8 @@
         reports its <strong>worldwide box-office revenue</strong> expressed in
         constant 2020 dollars.
         <br />
-        Click on a dot to reveal the information about the film used in the
-        analysis.
+        Click on a dot to reveal the information about the score of a film used
+        in the analysis.
       </p>
 
       <div class="chart-wrap film-scatter-wrap">
@@ -296,10 +295,7 @@
         <p>
           We focus on a one-sided (left-tailed) test on β<sub>1</sub>, asking
           whether higher anticipation accuracy is associated with lower
-          box-office revenue. The one-tailed p-value is the probability, under
-          the null hypothesis of no effect, of observing a coefficient as
-          negative as ours (or more), so a small value directly supports our
-          directional prediction.
+          box-office revenue.
         </p>
       </div>
     </div>
@@ -313,38 +309,44 @@
           The main coefficient of interest,
           <strong>anticipatory accuracy</strong>, shows a
           <strong>positive and statistically significant</strong> association
-          with box-office performance (β<sub>1</sub> = 0.149). The conventional
-          two-sided p-value for this effect is <strong>p = 0.008</strong>.
-          However, because the pre-registered hypothesis specified a
-          <strong>one-sided left-tailed test</strong> (H1: β<sub>1</sub> &lt;
-          0), the corresponding one-sided p-value is <strong>0.996</strong>.
-          This result provides <strong>no support</strong> for the
-          pre-registered directional hypothesis that more accurate films would
-          be less commercially successful.
+          with box-office performance (<em>β<sub>1</sub></em> = 0.149). The
+          conventional two-sided p-value for this effect is
+          <strong><em>p</em> = 0.008</strong>. However, the left-tailed p-value
+          is <strong><em>p</em> = 0.996</strong>. This result provides
+          <strong>no support</strong> for the pre-registered directional
+          hypothesis that more accurate films would be less commercially
+          successful.
 
           <br /><br />
 
-          By contrast, the one-sided <strong>right-tailed p-value</strong> (H1:
-          β<sub>1</sub> &gt; 0) is <strong>0.004</strong>, indicating strong
-          evidence in favor of a <strong>positive relationship</strong> between
-          anticipatory accuracy and box-office revenue.
+          By contrast, the <strong>right-tailed p-value</strong> is
+          <strong><em>p</em> = 0.004</strong>, indicating strong evidence in
+          favor of a <strong>positive relationship</strong> between anticipatory
+          accuracy and box-office revenue.
 
           <br /><br />
 
           Among the control variables,
           <strong>production budget</strong> emerges as a strong and highly
-          significant predictor of box-office revenue (β<sub>2</sub> = 0.416, p
-          &lt; 0.001). In contrast, the effect of
+          significant predictor of box-office revenue (<em>β<sub>2</sub></em> =
+          0.416, <em>p</em> < 0.001). In contrast, the effect of
           <strong>release year</strong> is not statistically significant in this
-          model (β<sub>3</sub> = 0.076, p = 0.165), suggesting that temporal
-          trends are largely accounted for by differences in budget and film
-          characteristics.
+          model (<em>β<sub>3</sub></em> = 0.076, <em>p</em> = 0.165), suggesting
+          that temporal trends are largely accounted for by differences in
+          budget and film characteristics.
+
+          <br /><br />
+
+          Overall, the model explains a meaningful share of the variance in
+          box-office performance (<em>R²</em> = 0.220), indicating that
+          approximately 22% of the variation in revenue is accounted for by
+          anticipatory accuracy, production budget, and release year.
         </p>
       </div>
     </div>
 
     <div class="chart-wrap results">
-      <h2 class="figure-title">Figure 3 — Regression results</h2>
+      <h2 class="figure-title">Figure 3 — Forest plot of regression results</h2>
       <svg id="results"></svg>
       <div id="analysis-results" class="analysis-results-card"></div>
       <script type="module" src="../static/js/Graph_results.js"></script>

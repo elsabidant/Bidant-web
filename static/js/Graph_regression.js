@@ -134,7 +134,7 @@ function drawScatter(data) {
 
   const width = 940;
   const height = 520;
-  const margin = { top: 28, right: 18, bottom: 58, left: 70 };
+  const margin = { top: 28, right: 18, bottom: 60, left: 70 };
   const innerW = width - margin.left - margin.right;
   const innerH = height - margin.top - margin.bottom;
 
@@ -210,9 +210,9 @@ function drawScatter(data) {
   // Axis labels
   g.append("text")
     .attr("x", innerW / 2)
-    .attr("y", innerH + 35)
+    .attr("y", innerH + 40)
     .attr("text-anchor", "middle")
-    .attr("fill", "#f6f6f9")
+    .attr("fill", "#aab")
     .attr("font-size", 12)
     .text("Prediction score");
 
@@ -221,18 +221,18 @@ function drawScatter(data) {
     .attr("x", -innerH / 2)
     .attr("y", -60)
     .attr("text-anchor", "middle")
-    .attr("fill", "#f6f6f9")
+    .attr("fill", "#aab")
     .attr("font-size", 12)
     .text("Worldwide box office (2020, log scale)");
 
-  // Source text (kept as-is)
+  // Source text
   g.append("text")
     .attr("x", innerW)
-    .attr("y", innerH + 40)
+    .attr("y", innerH + 57)
     .attr("text-anchor", "end")
     .attr("fill", "#aab")
-    .attr("font-size", 9)
-    .text("Source : IMDb dataset, 2020");
+    .attr("font-size", 10)
+    .text("Source : IMDb dataset annotated, 2025");
 
   // Horizontal grid lines
   const baseGridTicks = y.ticks(4);

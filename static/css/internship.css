@@ -212,8 +212,8 @@ body {
 
 /* Part title */
 .part-title {
-  font-family: "Oi", system-ui, sans-serif;
-  font-size: clamp(20px, 3.6vw, 36px);
+  font-family: "Ultra", system-ui;
+  font-size: clamp(45px, 3vw, 50px);
   color: var(--accent);
   line-height: 1.05;
   text-align: center;
@@ -222,8 +222,8 @@ body {
 }
 
 .part-title-date {
-  font-family: "Oi", system-ui, sans-serif;
-  font-size: clamp(20px, 3vw, 30px);
+  font-family: "Ultra", system-ui;
+  font-size: clamp(40px, 3vw, 50px);
   line-height: 1.05;
   text-align: center;
   margin-top: 30px;

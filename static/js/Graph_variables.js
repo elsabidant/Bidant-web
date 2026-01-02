@@ -27,7 +27,7 @@ const movies = raw
 // Dimensions
 const width = 460;
 const height = 260;
-const margin = { top: 52, right: 18, bottom: 58, left: 70 };
+const margin = { top: 52, right: 18, bottom: 62, left: 70 };
 const innerW = width - margin.left - margin.right;
 const innerH = height - margin.top - margin.bottom;
 
@@ -80,7 +80,7 @@ function addGridY(g, y) {
 function addAxisLabels(g, xLabel, yLabel) {
   g.append("text")
     .attr("x", innerW / 2)
-    .attr("y", innerH + 46)
+    .attr("y", innerH + 36)
     .attr("text-anchor", "middle")
     .attr("fill", "#aab")
     .attr("font-size", 12)
@@ -103,6 +103,7 @@ function drawCountPlot({
   order = null,
   xLabel,
   yLabel = "Films (count)",
+  sourceText = null,
 }) {
   const svg = getSvg(svgId);
   if (!svg) return;
@@ -157,6 +158,17 @@ function drawCountPlot({
     .attr("height", (d) => Math.max(0, innerH - y(d.count) - 1));
 
   addAxisLabels(g, xLabel, yLabel);
+
+  if (sourceText) {
+    g.append("text")
+      .attr("class", "figure-source")
+      .attr("x", innerW)
+      .attr("y", innerH + 60)
+      .attr("fill", "#aab")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+      .text(sourceText);
+  }
 }
 
 function drawHistogram({
@@ -167,6 +179,7 @@ function drawHistogram({
   xTickFormat = null,
   xLabel,
   yLabel = "Count",
+  sourceText = null,
 }) {
   const svg = getSvg(svgId);
   if (!svg) return;
@@ -203,9 +216,20 @@ function drawHistogram({
     .attr("height", (d) => Math.max(0, innerH - y(d.length) - 1));
 
   addAxisLabels(g, xLabel, yLabel);
+
+  if (sourceText) {
+    g.append("text")
+      .attr("class", "figure-source")
+      .attr("x", innerW)
+      .attr("y", innerH + 60)
+      .attr("fill", "#aab")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+      .text(sourceText);
+  }
 }
 
-function drawYearCounts({ svgId, figTitle }) {
+function drawYearCounts({ svgId, figTitle, sourceText = null }) {
   const svg = getSvg(svgId);
   if (!svg) return;
 
@@ -252,6 +276,17 @@ function drawYearCounts({ svgId, figTitle }) {
     .attr("height", (d) => Math.max(0, innerH - y(d[1]) - 1));
 
   addAxisLabels(g, "Release year", "Films (count)");
+
+  if (sourceText) {
+    g.append("text")
+      .attr("class", "figure-source")
+      .attr("x", innerW)
+      .attr("y", innerH + 60)
+      .attr("fill", "#aab")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+      .text(sourceText);
+  }
 }
 
 function makeToggle(controlsId, options, onChange, defaultKey) {
@@ -286,11 +321,13 @@ drawCountPlot({
   values: movies.map((d) => d.score).filter((v) => Number.isFinite(v)),
   xLabel: "Prediction score (0–5)",
   yLabel: "Films (count)",
+  sourceText: "Source : IMDb dataset, 2020",
 });
 
 drawYearCounts({
   svgId: "#year-plot",
   figTitle: "Figure 1.b — Films per release year",
+  sourceText: "Source : IMDb dataset, 2020",
 });
 
 function renderBox(mode) {
@@ -310,6 +347,7 @@ function renderBox(mode) {
     xTickFormat: mode === "log" ? d3.format(".2f") : d3.format("$.2s"),
     xLabel: mode === "log" ? "log10 Box office (2020$)" : "Box office (2020$)",
     yLabel: "Films (count)",
+    sourceText: "Source : IMDb dataset, 2020",
   });
 }
 
@@ -339,6 +377,7 @@ function renderBudget(mode) {
     xTickFormat: mode === "log" ? d3.format(".2f") : d3.format("$.2s"),
     xLabel: mode === "log" ? "log10 Budget (2020$)" : "Budget (2020$)",
     yLabel: "Films (count)",
+    sourceText: "Source : IMDb Movies Dataset, Kaggle, 2022",
   });
 }
 
@@ -352,12 +391,3 @@ makeToggle(
   "raw"
 );
 renderBudget("raw");
-
-// Source
-const figureRoot = document.querySelector(".chart-wrap.variables");
-if (figureRoot && !figureRoot.querySelector(".figure-source")) {
-  const source = document.createElement("div");
-  source.className = "figure-source";
-  source.textContent = "Source: IMDb dataset, 2020";
-  figureRoot.appendChild(source);
-}
