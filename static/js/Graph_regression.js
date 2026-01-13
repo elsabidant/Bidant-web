@@ -72,7 +72,7 @@ function renderFilmDetails(film) {
 // ---- Data loading & scatterplot ----
 
 (async function () {
-  const raw = await d3.csv("../static/data/full_annotated_film_score.csv");
+  const raw = await d3.csv("../static/data/IMDB_full_annotated_clean.csv");
 
   const films = raw
     .map((d) => {

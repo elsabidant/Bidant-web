@@ -31,10 +31,11 @@
     <div class="head">
       <h1 class="title">Popcorn and prophecy</h1>
       <p class="muted">
-        Investigation on whether science-fiction movies truly anticipate future
-        developments or mainly provide compelling entertainment dressed up as
-        prophecy.
+        This page presents a pre-registered empirical study on whether
+        science-fiction movies truly anticipate future developments or mainly
+        provide compelling entertainment dressed up as prophecy.
       </p>
+      <p class="muted">Study supervised by Edgar Dubourg</p>
     </div>
 
     <!-- Menu -->
@@ -100,7 +101,7 @@
     <!-- Description & Hypotheses -->
     <div class="wrap section1">
       <div class="card">
-        <h2>Description</h2>
+        <h2>Introduction</h2>
         <div class="separator"></div>
         <p>
           Fictional narratives have long been debated as serving either a
@@ -165,8 +166,8 @@
         <h2>Material</h2>
         <div class="separator"></div>
         <p>
-          The study relies on the IMDb dataset of science-fiction movies
-          released between 1931 and 2019. The initial sample includes
+          The study relies on the IMDb dataset of movies released between 1931
+          and 2019. The initial sample includes
           <strong>1,455 science-fiction films</strong> with basic metadata
           (title, plot, year of release, genre, language, worldwide gross
           income, etc.).
@@ -181,33 +182,7 @@
       </div>
     </div>
 
-    <!-- Variables plots -->
-    <div class="chart-wrap variables">
-      <h2 class="figure-title">Figure 1 — Distributions of key variables</h2>
-      <div class="plots-grid">
-        <section class="plot-card">
-          <svg id="score-plot"></svg>
-        </section>
-
-        <section class="plot-card">
-          <svg id="year-plot"></svg>
-        </section>
-
-        <section class="plot-card">
-          <div class="plot-controls" id="boxoffice-controls"></div>
-          <svg id="boxoffice-plot"></svg>
-        </section>
-
-        <section class="plot-card">
-          <div class="plot-controls" id="budget-controls"></div>
-          <svg id="budget-plot"></svg>
-        </section>
-      </div>
-
-      <script type="module" src="../static/js/Graph_variables.js"></script>
-    </div>
-
-    <!-- Method, Statistics & Interpretation -->
+    <!-- Annotation method -->
     <div class="wrap section2">
       <div class="card">
         <h2>Annotation method</h2>
@@ -245,8 +220,45 @@
             </p>
           </div>
         </div>
+        <p class="annotation-intro">
+          <br />
+          An alternative annotation procedure was implemented at an early stage
+          of the project, relying on a claim-based strategy (see Devlog). The
+          anticipatory accuracy scores derived from this procedure converged
+          with those obtained using the current annotation protocol, suggesting
+          that the measurement is robust to reasonable variations in annotation
+          strategy.
+        </p>
       </div>
     </div>
+
+    <!-- Variables plots -->
+    <div class="chart-wrap variables">
+      <h2 class="figure-title">Figure 1 — Distributions of key variables</h2>
+      <div class="plots-grid">
+        <section class="plot-card">
+          <svg id="score-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <svg id="year-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <div class="plot-controls" id="boxoffice-controls"></div>
+          <svg id="boxoffice-plot"></svg>
+        </section>
+
+        <section class="plot-card">
+          <div class="plot-controls" id="budget-controls"></div>
+          <svg id="budget-plot"></svg>
+        </section>
+      </div>
+
+      <script type="module" src="../static/js/Graph_variables.js"></script>
+    </div>
+
+    <!-- Method, Statistics & Interpretation -->
 
     <!-- Annotated data-->
 
@@ -309,10 +321,10 @@
           The main coefficient of interest,
           <strong>anticipatory accuracy</strong>, shows a
           <strong>positive and statistically significant</strong> association
-          with box-office performance (<em>β<sub>1</sub></em> = 0.149). The
+          with box-office performance (<em>β<sub>1</sub></em> = 0.213). The
           conventional two-sided p-value for this effect is
-          <strong><em>p</em> = 0.008</strong>. However, the left-tailed p-value
-          is <strong><em>p</em> = 0.996</strong>. This result provides
+          <strong><em>p</em> < 0.001</strong>. However, the left-tailed p-value
+          is <strong><em>p</em> = 0.999</strong>. This result provides
           <strong>no support</strong> for the pre-registered directional
           hypothesis that more accurate films would be less commercially
           successful.
@@ -320,7 +332,7 @@
           <br /><br />
 
           By contrast, the <strong>right-tailed p-value</strong> is
-          <strong><em>p</em> = 0.004</strong>, indicating strong evidence in
+          <strong><em>p</em> < 0.001</strong>, indicating strong evidence in
           favor of a <strong>positive relationship</strong> between anticipatory
           accuracy and box-office revenue.
 
@@ -329,17 +341,17 @@
           Among the control variables,
           <strong>production budget</strong> emerges as a strong and highly
           significant predictor of box-office revenue (<em>β<sub>2</sub></em> =
-          0.416, <em>p</em> < 0.001). In contrast, the effect of
+          0.450, <em>p</em> < 0.001). In contrast, the effect of
           <strong>release year</strong> is not statistically significant in this
-          model (<em>β<sub>3</sub></em> = 0.076, <em>p</em> = 0.165), suggesting
+          model (<em>β<sub>3</sub></em> = 0.061, <em>p</em> = 0.206), suggesting
           that temporal trends are largely accounted for by differences in
           budget and film characteristics.
 
           <br /><br />
 
           Overall, the model explains a meaningful share of the variance in
-          box-office performance (<em>R²</em> = 0.220), indicating that
-          approximately 22% of the variation in revenue is accounted for by
+          box-office performance (<em>R²</em> = 0.241), indicating that
+          approximately 24% of the variation in revenue is accounted for by
           anticipatory accuracy, production budget, and release year.
         </p>
       </div>
@@ -352,10 +364,10 @@
       <script type="module" src="../static/js/Graph_results.js"></script>
     </div>
 
-    <!-- Discussion -->
+    <!-- Interpretation -->
     <div class="wrap section1">
       <div class="card">
-        <h2>Discussion</h2>
+        <h2>Results interpretation</h2>
         <div class="separator"></div>
         <p>
           Overall, these findings
