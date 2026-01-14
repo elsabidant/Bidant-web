@@ -33,7 +33,7 @@
       <p class="muted">
         This page presents a pre-registered empirical study on whether
         science-fiction movies truly anticipate future developments or mainly
-        provide compelling entertainment dressed up as prophecy.
+        provide compelling entertainment.
       </p>
       <p class="muted">Study supervised by Edgar Dubourg</p>
     </div>
@@ -101,7 +101,7 @@
     <!-- Description & Hypotheses -->
     <div class="wrap section1">
       <div class="card">
-        <h2>Introduction</h2>
+        <h2>Description</h2>
         <div class="separator"></div>
         <p>
           Fictional narratives have long been debated as serving either a
@@ -137,6 +137,11 @@
           <strong>less commercially successful</strong>, as predicted by the
           entertainment hypothesis, or whether anticipatory accuracy instead
           contributes positively to cultural and economic success.
+
+          <br /><br />
+          In a nutshell, does science fiction truly anticipate the future in a
+          systematic way, or does it mainly provide compelling entertainment
+          dressed up as prophecy?
         </p>
       </div>
 
@@ -177,7 +182,7 @@
           worldwide box office, resulting in N = 588 movies. In addition, we
           merge this dataset with the IMDb Movies Dataset from Kaggle to obtain
           budget information, yielding a final analytical sample of
-          <strong>N = 360</strong> films.
+          <strong>N = 360</strong> films (see <strong> Figure 1</strong>).
         </p>
       </div>
     </div>
@@ -192,7 +197,8 @@
           We rely on an automatic annotation procedure powered by GPT-5.2 to
           compute an holistic measure of anticipatory accuracy. GPT is asked
           directly how much a past film anticipates the present, yielding a
-          <strong>continuous score from 0 to 5</strong>.
+          <strong>continuous score from 0 to 5</strong> (see
+          <strong> Figure 2</strong>).
         </p>
 
         <div class="annotation-grid">
@@ -318,7 +324,7 @@
         <h2>Results</h2>
         <div class="separator"></div>
         <p>
-          The main coefficient of interest,
+          The main coefficient of interest (see <strong> Figure 3</strong>),
           <strong>anticipatory accuracy</strong>, shows a
           <strong>positive and statistically significant</strong> association
           with box-office performance (<em>β<sub>1</sub></em> = 0.213). The
@@ -371,16 +377,39 @@
         <div class="separator"></div>
         <p>
           Overall, these findings
-          <strong
-            >contradict the pre-registered entertainment hypothesis</strong
-          >
+          <strong>contradict the pre-registered hypothesis</strong>
           and instead support the <strong>simulation hypothesis</strong>:
           science-fiction films that more accurately anticipate future
-          developments tend to achieve
-          <strong>greater commercial success</strong>. Rather than indicating a
-          trade-off between realism and popularity, anticipatory accuracy
-          appears to function as a <strong>positive contributor</strong> to
-          cultural and economic outcomes in this sample.
+          developments tend to achieve greater commercial success. Rather than
+          indicating a trade-off between realism and popularity, anticipatory
+          accuracy appears to function as a
+          <strong>positive contributor</strong> to cultural and economic
+          outcomes in this sample.
+        </p>
+      </div>
+    </div>
+
+    <!-- Discussion -->
+    <div class="wrap section1">
+      <div class="card">
+        <h2>Discussion</h2>
+        <div class="separator"></div>
+        <p>
+          Several limitations should be acknowledged. First, anticipatory
+          accuracy is measured using an automated annotation procedure based on
+          a large language model. So, this measure is partly dependent on model
+          assumptions and retrospective interpretation.
+        </p>
+        <p>
+          Second, the analysis is restricted to science-fiction films.
+          Consequently, the observed relationship between anticipation accuracy
+          and commercial success cannot be interpreted as specific to the genre
+          without a comparative baseline.
+        </p>
+        <p>
+          The study will soon be complemented by a cross-genre comparison
+          testing whether science-fiction films exhibit higher anticipation
+          scores than films from other genres.
         </p>
       </div>
     </div>
